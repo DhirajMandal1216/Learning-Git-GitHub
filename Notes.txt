@@ -1,0 +1,106 @@
+********************************************* git Bash command ******************************************************************* 
+
+pwd                                    => print working directory 
+ctrl + l                               =>scroll up
+clear                                  =>clear the console screen
+rm file/folder-name                    =>remove / delete
+cd ../                                 =>back to the previous folder
+mkdir                                  =>make new directory
+
+
+
+
+******************************************* git command for local***************************************************************************
+
+git add filename                   => Add file from untracked/modified state to staged area (ek file ko stage karne ke liye)
+
+git add .                          => Add all changed/untracked files to staged area (sari files ek saath stage karne ke liye)
+
+
+git commit -m "message"            => Commit the staged changes with a message (commit karne ke liye message ke saath)
+
+
+git log                            => Check the commit history of the current branch (current branch ka history dekhne ke liye)
+
+git log --all                      => Check the commit history of all branches (sabhi branches ka history dekhne ke liye)
+
+git log --all --oneline            => Show all commit history in one line per commit (compact view, sab branches ke liye)
+
+git log --all --oneline --graph    => Show all commit history in graph structure (branches aur merges ka graphical view)
+
+
+git checkout branch-name           => Switch to another branch (ek branch se dusri branch pe jaane ke liye)
+
+git checkout commit-id            => Go to a previous version of code using commit ID (purane commit pe jaane ke liye)
+
+git checkout main/master           => Go back to the main/master branch (wapas current version pe aane ke liye)
+
+
+git merge branch-name              => Merge one branch into the current branch (ek branch ko current branch me milane ke liye)
+
+git revert commit-id 		   => jb kuch galat commit ho jaye local machine me tb use uncommit kene k liye use krte hai
+
+********************************************** 	`git command for GitHub *****************************************************************************
+git remote show origin             => Show detailed info about the remote repository (remote repo ka detail dikhata hai, jaise URL, fetch/push info, branches etc.)
+
+
+git push -u origin branch-name     => Link local branch to remote and push (pehli baar push karte waqt local branch ko remote se connect karta hai)
+
+git push                           => Push local committed changes to remote repo (local commits ko remote repo par bhejne ke liye)
+
+
+git fetch                          => Get latest changes from remote but don’t merge (remote se latest changes laata hai lekin merge nahi karta)
+
+git merge origin/main              => Merge fetched changes from origin/main into current branch (fetch ke baad changes ko current branch me milata hai)
+
+git pull                           => Combines fetch and merge (remote se changes laata hai aur turant merge bhi kar deta hai)
+
+
+ Notes:
+       * git push -u origin branch-name mein -u ka matlab hota hai "upstream set karna", taaki baad me sirf git push likhne se kaam ho jaye.
+
+       * git pull = git fetch + git merge dono ek saath.
+
+       * origin ek default naam hota hai jo remote repo ko refer karta hai (mostly GitHub/GitLab wali repo).
+
+----------------------------------------------- Add Contributor to Your Repository (GitHub) ---------------------------------------------------------------------------------------
+*****➤ Steps:*****
+
+* Go to your GitHub repository
+
+* Click on Settings
+
+* In the left sidebar, click on Collaborators
+
+* Click on "Add people"
+
+* Paste the GitHub username or email of the contributor (past collaborator)
+
+* Click the "Add" button
+
+* Select their permission level (default is Write) – optional but useful
+
+* The person will receive an invite, and once accepted, they’ll be added as a collaborator
+
+*********---✍️ Thoda clean version of what you wrote:---********
+
+Settings →
+   Collaborators →
+      Add people →
+         Enter GitHub username →
+            Click 'Add' →
+               (Contributor will receive invitation)
+
+
+
+
+
+
+
+git rm --cached filename.extension  ==>"File ko Git ke tracking system se hata do, lekin working directory (yaani tere computer ke folder) se delete mat karo."
+
+
+note:    Iska use kab hota hai?
+         Agar galti se koi sensitive file (jaise password.txt, .env, etc.) Git me add ho gayi ho aur tu chaahta hai ki Git usse track na    
+         kare.Tu kisi file ko .gitignore me dalna chahta hai, lekin Git usse already track kar raha hai — toh pehle git rm --cached se untrack karega, tabhi .gitignore kaam karega.
+ 
